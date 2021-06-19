@@ -8,7 +8,7 @@ GeneticForest is initialized by selecting subsets of the columns of the input da
 After initialization, the subsequent "generation" of trees is selected by "mating" pairs of trees.  Selection occurs randomly, weighted by the coefficients of the linear model.  Mating produces a tree by randomly selecting columns used in each tree.  This generation of trees is again stacked with a linear model with Elastic Net regularization.  This is repeated for a specified number of generations.
 
 ## Results
-So far, this model has only been tested on the Numerai dataset.  This produces fine results, but falls short of the XgBoost benchmark model produced by the Numerai team.  More testing and tweaking of the algorithm is needed, along with tests on more types of datasets to determine whether this is a fruitful path of research.  
+So far, this model has only been tested on the Numerai dataset.  This produces fine results, but falls short of the XgBoost benchmark model produced by the Numerai team.  More testing and tweaking of the algorithm is needed, along with tests on more types of datasets to determine whether this is a fruitful path of research. 
 
 ## Implementation
 This model is implemented entirely using Scikit-Learn.  Specifically, it leverages StackingRegressor from the ensemble module, and DecisionTreeRegressor from the tree module.  Currently, the module has not been generalized to other base learners or stacking types. 
